@@ -1,4 +1,5 @@
-# CycleGAN and pix2pix in PyTorch
+# SalienceNet
+
 
 ## Prerequisites
 - Linux or macOS
