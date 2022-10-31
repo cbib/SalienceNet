@@ -1,5 +1,8 @@
 # SalienceNet
 
+Deep Learning style transfert for nuclei enhancement
+
+![alt text](figure_results.png)
 
 ## Prerequisites
 - Linux or macOS
