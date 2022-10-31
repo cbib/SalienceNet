@@ -26,10 +26,23 @@ https://zenodo.org/record/7266921/files/salienceNet.zip?download=1
 
 Once downloaded, move it to /SalienceNet/checkpoints and unzip it.
 
+### Dataset
+To create a dataset please use the following architecture : 
+```bash
+
+└── dataset_folder
+    ├── testA
+    ├── testB
+    ├── trainA
+    └── trainB
+    
+```
+*A* being the source style dataset and *B* the target style dataset.
+
 ### CycleGAN train/test
 
 - To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
-- To log training progress and test images to W&B dashboard, set the `--use_wandb` flag with train and test script
+- To log training progress and test images to W&B dashboard, set the `--use_wandb` flag with train and test scrip
 
 
 - To test on pretrained model:
