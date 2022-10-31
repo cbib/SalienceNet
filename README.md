@@ -39,33 +39,7 @@ To create a dataset please use the following architecture :
 ```
 *A* being the source style dataset and *B* the target style dataset.
 
-### CycleGAN train/test
-
-- To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
-- To log training progress and test images to W&B dashboard, set the `--use_wandb` flag with train and test scrip
-
-
-- To test on pretrained model:
-```bash
-#!./scripts/train_cyclegan.sh
-python test.py --gpu_ids x --dataroot datasets/dataset_example/ --model cycle_gan --input_nc 1 --output_nc 1 --name SalienceNet
-```
-
-- To train a new model:
-```bash
-#!./scripts/train_cyclegan.sh
-python train.py  --gpu_ids x --dataroot datasets/dataset_example/ --n_epochs xxx  --model cycle_gan --gan_mode LSSSIMGRAD --input_nc 1 --output_nc 1 --name modelname --wcrit1 0.2 --wcrit2 0.2 --wcrit3 0.6
-```
-To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/index.html`.
-- Test the model:
-```bash
-#!./scripts/test_cyclegan.sh
-python test.py --gpu_ids x --dataroot datasets/dataset_example/ --model cycle_gan --input_nc 1 --output_nc 1 --name modelname
-
-```
-- The test results will be saved to a html file here: `./results/maps_cyclegan/latest_test/index.html`.
-
-## Pretrained model
+### Pretrained model
 A pretrained model is available, to use it for prediction use the model name salienceNet :
 
 ```bash
@@ -74,6 +48,29 @@ python test.py --gpu_ids x --dataroot datasets/dataset_example/ --model cycle_ga
 
 ```
 
+### CycleGAN train/test
+
+- To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
+- To log training progress and test images to W&B dashboard, set the `--use_wandb` flag with train and test scrip
+
+
+- To train a new model:
+```bash
+#!./scripts/train_cyclegan.sh
+python train.py  --gpu_ids x --dataroot datasets/dataset_example/ --n_epochs xxx  --model cycle_gan --gan_mode LSSSIMGRAD --name modelname --wcrit1 0.2 --wcrit2 0.2 --wcrit3 0.6
+```
+To see more intermediate results, check out `./checkpoints/maps_cyclegan/web/index.html`.
+- Test the model:
+```bash
+#!./scripts/test_cyclegan.sh
+python test.py --gpu_ids x --dataroot datasets/dataset_example/ --model cycle_gan --name modelname
+
+```
+- The test results will be saved to a html file here: `./results/maps_cyclegan/latest_test/index.html`.
+
+
+
 
 ## Acknowledgments
 Our code is inspired by [pytorch-cycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
+For more information regarding the possible test and train option please refer to this github.
