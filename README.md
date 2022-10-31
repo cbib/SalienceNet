@@ -19,11 +19,26 @@ cd SalienceNet
   - For pip users, please type the command `pip install -r requirements.txt`.
   - For Conda users, you can create a new Conda environment using `conda env create -f environment.yml`.
 
+
+### Download pre-trained model
+SalienceNet pre-trained model V0 is available on zenodo :
+https://zenodo.org/record/7266921/files/salienceNet.zip?download=1
+
+Once downloaded, move it to /SalienceNet/checkpoints and unzip it.
+
 ### CycleGAN train/test
 
 - To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
 - To log training progress and test images to W&B dashboard, set the `--use_wandb` flag with train and test script
-- Train a model:
+
+
+- To test on pretrained model:
+```bash
+#!./scripts/train_cyclegan.sh
+python test.py --gpu_ids x --dataroot datasets/dataset_example/ --model cycle_gan --input_nc 1 --output_nc 1 --name SalienceNet
+```
+
+- To train a new model:
 ```bash
 #!./scripts/train_cyclegan.sh
 python train.py  --gpu_ids x --dataroot datasets/dataset_example/ --n_epochs xxx  --model cycle_gan --gan_mode LSSSIMGRAD --input_nc 1 --output_nc 1 --name modelname --wcrit1 0.2 --wcrit2 0.2 --wcrit3 0.6
