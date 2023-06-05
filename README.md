@@ -1,6 +1,8 @@
 # SalienceNet
 
-Deep Learning style transfert for nuclei enhancement : https://www.biorxiv.org/content/10.1101/2022.10.27.514030v1.article-info
+Deep Learning style transfert for nuclei enhancement : https://www.scitepress.org/Papers/2023/116235/116235.pdf
+
+First version : https://www.biorxiv.org/content/10.1101/2022.10.27.514030v1.article-info
 
 ![alt text](figure_results.png)
 
@@ -44,6 +46,8 @@ To create a dataset please use the following architecture :
 
 ### Pretrained model
 A pretrained model is available, to use it for prediction use the model name salienceNet :
+
+/!\ The pretrained model is trained on grayscale images with 1 channel, do not forget to use "--input_nc 1 --output_nc 1" as shown below.
 
 ```bash
 #!./scripts/test_cyclegan.sh
