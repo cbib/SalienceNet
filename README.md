@@ -16,7 +16,7 @@ First version : https://www.biorxiv.org/content/10.1101/2022.10.27.514030v1.arti
 
 - Clone this repo:
 ```bash
-https://github.com/ebouilhol/SalienceNet.git
+git clone https://github.com/ebouilhol/SalienceNet.git
 cd SalienceNet
 ```
 
