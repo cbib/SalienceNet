@@ -24,7 +24,7 @@ cd SalienceNet
   - For pip users :
   `pip install -r requirements.txt`.
   - For Conda users, you can create a new Conda environment using :
-  `conda env create -f environment.yml`.
+  `conda env create -f env.yml`.
 
 
 ### Download pre-trained model
